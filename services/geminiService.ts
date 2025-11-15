@@ -2,8 +2,7 @@ import { GoogleGenAI, FunctionDeclaration, Type, GenerateContentResponse } from 
 import { OraclePersona, LyingLevel } from '../types';
 
 // FIX: Aligned API key retrieval with guidelines to use process.env.API_KEY.
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-
+const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
 
 const flagAccidentalTruth: FunctionDeclaration = {
   name: "flagAccidentalTruth",
