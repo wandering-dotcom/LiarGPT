@@ -5,7 +5,7 @@ interface AnalysisChartProps {
   data: { name: string; value: number }[];
 }
 
-const COLORS = ['#8b5cf6', '#a78bfa', '#c4b5fd', '#6d28d9', '#4c1d95'];
+const COLORS = ['#4f46e5', '#7c3aed', '#0e7490', '#0d9488', '#6d28d9']; // Indigo, Violet, Cyan, Teal, Deep Violet
 
 const RADIAN = Math.PI / 180;
 const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent }: any) => {
@@ -49,12 +49,12 @@ export const AnalysisChart: React.FC<AnalysisChartProps> = ({ data }) => {
         </Pie>
          <Tooltip
             contentStyle={{
-              backgroundColor: 'rgba(31, 41, 55, 0.8)',
-              borderColor: '#4f46e5',
+              backgroundColor: 'rgba(30, 41, 59, 0.8)',
+              borderColor: '#6366f1',
               color: '#e5e7eb',
             }}
           />
-        <Legend wrapperStyle={{ color: '#a5b4fc', fontSize: '14px' }} />
+        <Legend wrapperStyle={{ color: '#67e8f9', fontSize: '14px' }} />
       </PieChart>
     </ResponsiveContainer>
   );

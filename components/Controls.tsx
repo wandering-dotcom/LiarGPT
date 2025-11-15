@@ -20,8 +20,8 @@ export const Controls: React.FC<ControlsProps> = ({ oraclePersona, setOraclePers
   };
   
   return (
-    <div className="bg-gray-800/50 backdrop-blur-md p-4 rounded-lg border border-indigo-500/30 shadow-2xl">
-      <h2 style={{ fontFamily: 'Cinzel, serif' }} className="text-xl font-bold mb-4 text-purple-300">Oracle Controls</h2>
+    <div className="bg-slate-900/70 backdrop-blur-md p-4 rounded-lg border border-indigo-500/50 shadow-2xl shadow-indigo-500/10">
+      <h2 style={{ fontFamily: 'Cinzel, serif' }} className="text-xl font-bold mb-4 text-cyan-300">Oracle Controls</h2>
       <div className="space-y-4">
         <div>
           <label htmlFor="oracle-persona" className="block text-sm font-medium text-gray-400 mb-1">Oracle Persona</label>
@@ -29,7 +29,7 @@ export const Controls: React.FC<ControlsProps> = ({ oraclePersona, setOraclePers
             id="oracle-persona"
             value={oraclePersona.id}
             onChange={(e) => setOraclePersona(ORACLE_PERSONAS.find(m => m.id === e.target.value) || ORACLE_PERSONAS[0])}
-            className="w-full bg-gray-900/70 border border-indigo-500/50 rounded-md py-2 px-3 text-white focus:ring-purple-500 focus:border-purple-500 transition"
+            className="w-full bg-slate-800/70 border border-indigo-500/50 rounded-md py-2 px-3 text-white focus:ring-indigo-500 focus:border-indigo-500 transition"
           >
             {ORACLE_PERSONAS.map(mode => (
               <option key={mode.id} value={mode.id}>{mode.name}</option>
@@ -39,7 +39,7 @@ export const Controls: React.FC<ControlsProps> = ({ oraclePersona, setOraclePers
         </div>
         
         <div>
-           <label htmlFor="lying-level" className="block text-sm font-medium text-gray-400 mb-1">Deception Level: <span className="font-bold text-purple-300">{lyingLevel.name}</span></label>
+           <label htmlFor="lying-level" className="block text-sm font-medium text-gray-400 mb-1">Deception Level: <span className="font-bold text-cyan-300">{lyingLevel.name}</span></label>
           <input
             id="lying-level"
             type="range"
@@ -48,7 +48,7 @@ export const Controls: React.FC<ControlsProps> = ({ oraclePersona, setOraclePers
             step="1"
             value={lyingLevel.value}
             onChange={handleSliderChange}
-            className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-purple-500"
+            className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-cyan-500"
           />
            <p className="text-xs text-gray-500 mt-1">{lyingLevel.description}</p>
         </div>

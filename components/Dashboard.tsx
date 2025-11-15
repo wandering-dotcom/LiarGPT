@@ -36,14 +36,14 @@ const PersonaPerformanceChart: React.FC<{ data: TrackingData }> = ({ data }) => 
         <ResponsiveContainer width="100%" height="100%">
             <BarChart data={chartData} layout="vertical" margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#4f46e5" strokeOpacity={0.2} />
-                <XAxis type="number" tick={{ fill: '#a5b4fc', fontSize: 12 }} allowDecimals={false} />
-                <YAxis type="category" dataKey="name" tick={{ fill: '#c7d2fe', fontSize: 12 }} width={100} />
-                <Tooltip contentStyle={{ backgroundColor: 'rgba(31, 41, 55, 0.8)', borderColor: '#4f46e5' }} cursor={{ fill: 'rgba(79, 70, 229, 0.1)' }}/>
-                <Legend wrapperStyle={{ color: '#a5b4fc' }} />
-                <Bar dataKey="Successful Lies" stackId="a" fill="#8b5cf6" radius={[4, 0, 0, 4]} >
+                <XAxis type="number" tick={{ fill: '#67e8f9', fontSize: 12 }} allowDecimals={false} />
+                <YAxis type="category" dataKey="name" tick={{ fill: '#a5f3fc', fontSize: 12 }} width={100} />
+                <Tooltip contentStyle={{ backgroundColor: 'rgba(30, 41, 59, 0.8)', borderColor: '#6366f1' }} cursor={{ fill: 'rgba(99, 102, 241, 0.1)' }}/>
+                <Legend wrapperStyle={{ color: '#67e8f9' }} />
+                <Bar dataKey="Successful Lies" stackId="a" fill="#4f46e5" radius={[4, 0, 0, 4]} >
                      <LabelList dataKey="Successful Lies" position="center" fill="#fff" fontSize={12} formatter={(value: number) => value > 0 ? value : ''} />
                 </Bar>
-                <Bar dataKey="Truths (Failures)" stackId="a" fill="#f87171" radius={[0, 4, 4, 0]}>
+                <Bar dataKey="Truths (Failures)" stackId="a" fill="#be185d" radius={[0, 4, 4, 0]}>
                     <LabelList dataKey="Truths (Failures)" position="center" fill="#fff" fontSize={12} formatter={(value: number) => value > 0 ? value : ''} />
                 </Bar>
             </BarChart>
@@ -78,18 +78,18 @@ export const Dashboard: React.FC<DashboardProps> = ({ sessionTrackingData, allTi
   };
 
   return (
-    <div className="bg-gray-800/50 backdrop-blur-md p-4 rounded-lg border border-indigo-500/30 shadow-2xl h-full flex flex-col gap-4">
+    <div className="bg-slate-900/70 backdrop-blur-md p-4 rounded-lg border border-indigo-500/50 shadow-2xl shadow-indigo-500/10 h-full flex flex-col gap-4">
       <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-2">
-        <h2 style={{ fontFamily: 'Cinzel, serif' }} className="text-xl font-bold text-purple-300 flex items-center gap-2">
+        <h2 style={{ fontFamily: 'Cinzel, serif' }} className="text-xl font-bold text-cyan-300 flex items-center gap-2">
             <Icon name="dashboard" className="w-6 h-6" />
             Deception Ledger
         </h2>
         <div className="flex gap-2 items-center">
-           <div className="bg-gray-900/70 p-1 rounded-lg border border-indigo-500/30">
-              <button onClick={() => setView('session')} className={`px-3 py-1 text-xs rounded-md transition-colors ${view === 'session' ? 'bg-purple-600 text-white' : 'text-gray-400 hover:bg-gray-700'}`}>Session</button>
-              <button onClick={() => setView('all-time')} className={`px-3 py-1 text-xs rounded-md transition-colors ${view === 'all-time' ? 'bg-purple-600 text-white' : 'text-gray-400 hover:bg-gray-700'}`}>All-Time</button>
+           <div className="bg-slate-800/70 p-1 rounded-lg border border-indigo-500/30">
+              <button onClick={() => setView('session')} className={`px-3 py-1 text-xs rounded-md transition-colors ${view === 'session' ? 'bg-indigo-600 text-white' : 'text-gray-400 hover:bg-slate-700'}`}>Session</button>
+              <button onClick={() => setView('all-time')} className={`px-3 py-1 text-xs rounded-md transition-colors ${view === 'all-time' ? 'bg-indigo-600 text-white' : 'text-gray-400 hover:bg-slate-700'}`}>All-Time</button>
           </div>
-          <button onClick={handleExport} className="px-3 py-1.5 bg-indigo-600/80 hover:bg-indigo-500/80 text-white text-xs rounded-lg transition-colors border border-indigo-500/50">Export Data</button>
+          <button onClick={handleExport} className="px-3 py-1.5 bg-indigo-700/80 hover:bg-indigo-600/80 text-white text-xs rounded-lg transition-colors border border-indigo-500/50">Export Data</button>
         </div>
       </div>
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-2">
@@ -100,13 +100,13 @@ export const Dashboard: React.FC<DashboardProps> = ({ sessionTrackingData, allTi
       </div>
       
       <div className="flex-grow grid grid-cols-1 xl:grid-cols-2 gap-x-8 gap-y-12">
-        <div className="flex flex-col min-h-[400px]">
+        <div className="flex flex-col min-h-[450px]">
             <h3 className="text-lg font-semibold mb-2 text-gray-300">Performance by Persona</h3>
             <div className="w-full flex-grow">
               <PersonaPerformanceChart data={trackingData} />
             </div>
         </div>
-        <div className="flex flex-col min-h-[400px]">
+        <div className="flex flex-col min-h-[450px]">
             <h3 className="text-lg font-semibold mb-2 text-gray-300">Lie Category Distribution</h3>
             <div className="w-full flex-grow">
               <AnalysisChart data={analysisChartData} />

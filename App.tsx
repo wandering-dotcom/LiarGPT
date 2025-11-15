@@ -229,7 +229,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-indigo-900/50 flex flex-col font-sans">
+    <div className="min-h-screen flex flex-col font-sans">
       <Header onInfoClick={() => setIsInfoModalOpen(true)} onHistoryClick={() => setIsHistoryModalOpen(true)} />
       <main className="flex-grow container mx-auto p-4 flex flex-col lg:flex-row gap-6">
         <div className="lg:w-1/2 flex flex-col gap-6">
