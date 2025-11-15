@@ -1,0 +1,5 @@
+{
+  "name": "Copy of Oracle of Whispers",
+  "description": "A fantasy-themed web application for research into AI deception and hallucination. Users can interact with an AI that is instructed to lie in various modes and intensities, while a dashboard tracks interaction metrics.",
+  "requestFramePermissions": []
+}
