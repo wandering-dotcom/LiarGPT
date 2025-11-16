@@ -33,7 +33,7 @@ const PersonaPerformanceChart: React.FC<{ data: TrackingData }> = ({ data }) => 
     }
 
     return (
-        <ResponsiveContainer width="100%" height="100%">
+        <ResponsiveContainer width="100%" height="200px">
             <BarChart data={chartData} layout="vertical" margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#4f46e5" strokeOpacity={0.2} />
                 <XAxis type="number" tick={{ fill: '#67e8f9', fontSize: 12 }} allowDecimals={false} />
