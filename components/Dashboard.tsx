@@ -100,13 +100,13 @@ export const Dashboard: React.FC<DashboardProps> = ({ sessionTrackingData, allTi
       </div>
       
       <div className="flex-grow grid grid-cols-1 xl:grid-cols-2 gap-x-8 gap-y-12">
-        <div className="flex flex-col min-h-[450px]">
+        <div className="flex flex-col min-h-[400px]">
             <h3 className="text-lg font-semibold mb-2 text-gray-300">Performance by Persona</h3>
             <div className="w-full flex-grow">
               <PersonaPerformanceChart data={trackingData} />
             </div>
         </div>
-        <div className="flex flex-col min-h-[450px]">
+        <div className="flex flex-col min-h-[400px]">
             <h3 className="text-lg font-semibold mb-2 text-gray-300">Lie Category Distribution</h3>
             <div className="w-full flex-grow">
               <AnalysisChart data={analysisChartData} />
